@@ -1,0 +1,11 @@
+[
+  {
+    "name": "demo",
+    "script": "server.js",
+    "log_date_format": "YYYY-MM-DD HH:mm:ss:SSS Z",
+    "env": {
+    },
+    "out_file": "log/out.log",
+    "error_file": "log/error.log"
+  }
+]
