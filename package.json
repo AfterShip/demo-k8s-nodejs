@@ -1,0 +1,20 @@
+{
+  "name": "demo-k8s-nodejs",
+  "version": "1.0.0",
+  "description": "This example shows how to build a containerized Node.js application using Kubernetes and Docker.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AfterShip/demo-k8s-nodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AfterShip/demo-k8s-nodejs/issues"
+  },
+  "homepage": "https://github.com/AfterShip/demo-k8s-nodejs#readme"
+}
