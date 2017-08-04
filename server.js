@@ -8,7 +8,7 @@ let app = express();
 
 app.get('/', function (req, res) {
     let json = {
-        version: "1234",
+        version: "12345",
         hostname: `${os.hostname()}`
     };
 
