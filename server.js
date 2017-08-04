@@ -17,7 +17,7 @@ app.get('/', function (req, res) {
 
 app.get('/test', function (req, res) {
     let json = {
-        version: "1234",
+        version: "1235",
         hostname: `${os.hostname()}`
     };
 
