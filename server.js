@@ -21,13 +21,7 @@ app.get('/test', function (req, res) {
         hostname: `${os.hostname()}`
     };
 
-    let n = 0;
-    while(n<100000){
-        n++;
-        if (n % 1000) {
-            console.log(n);
-        }
-    }
+    console.log(json);
 
     res.json(json);
 });
