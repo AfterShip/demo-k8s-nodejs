@@ -27,7 +27,7 @@ process.on('SIGINT', function() {
 var handleRequest = function(request, response) {
   console.log(`Received request for URL: ${request.url}`);
   response.writeHead(200);
-  response.end(`Hello, World!!\nHostname: ${os.hostname()}\n`);
+  response.end(`Hello, World 2!!\nHostname: ${os.hostname()}\n`);
 };
 
 var www = http.createServer(handleRequest);
