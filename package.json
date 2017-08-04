@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/AfterShip/demo-k8s-nodejs.git"
   },
+  "dependencies": {
+    "express": "^4.15.3"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {

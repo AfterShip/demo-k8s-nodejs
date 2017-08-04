@@ -1,32 +1,16 @@
-/**
- * Copyright 2017 The Kubernetes Authors All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *   http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+"use strict";
 
-const http = require('http');
 const os = require('os');
 
-const port = process.env.PORT || 8080;
+const express = require('express');
 
-process.on('SIGINT', function () {
-    console.log('shutting down...');
-    process.exit(1);
-});
+let app = express();
 
-let handleRequest = function (request, response) {
-    console.log(`Received request for URL: ${request.url}`);
-    response.writeHead(200);
+app.get('/', function (req, res) {
+    let json = {
+        version: "1234",
+        hostname: `${os.hostname()}`
+    };
 
     let n = 0;
     while(n<100000){
@@ -35,11 +19,8 @@ let handleRequest = function (request, response) {
             console.log(n);
         }
     }
-    response.end(`Hello, World 4!!\nHostname: ${os.hostname()}\n`);
-};
 
-let www = http.createServer(handleRequest);
-
-www.listen(port, () => {
-    console.log(`server listening on port ${port}`);
+    res.json(json);
 });
+
+app.listen(3000);
