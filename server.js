@@ -19,18 +19,27 @@ const os = require('os');
 
 const port = process.env.PORT || 8080;
 
-process.on('SIGINT', function() {
-  console.log('shutting down...');
-  process.exit(1);
+process.on('SIGINT', function () {
+    console.log('shutting down...');
+    process.exit(1);
 });
 
-var handleRequest = function(request, response) {
-  console.log(`Received request for URL: ${request.url}`);
-  response.writeHead(200);
-  response.end(`Hello, World 4!!\nHostname: ${os.hostname()}\n`);
+let handleRequest = function (request, response) {
+    console.log(`Received request for URL: ${request.url}`);
+    response.writeHead(200);
+
+    let n = 0;
+    while(n<100000){
+        n++;
+        if (n % 1000) {
+            console.log(n);
+        }
+    }
+    response.end(`Hello, World 4!!\nHostname: ${os.hostname()}\n`);
 };
 
-var www = http.createServer(handleRequest);
+let www = http.createServer(handleRequest);
+
 www.listen(port, () => {
-  console.log(`server listening on port ${port}`);
+    console.log(`server listening on port ${port}`);
 });
