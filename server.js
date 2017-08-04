@@ -12,6 +12,15 @@ app.get('/', function (req, res) {
         hostname: `${os.hostname()}`
     };
 
+    res.json(json);
+});
+
+app.get('/test', function (req, res) {
+    let json = {
+        version: "1234",
+        hostname: `${os.hostname()}`
+    };
+
     let n = 0;
     while(n<100000){
         n++;
@@ -22,5 +31,6 @@ app.get('/', function (req, res) {
 
     res.json(json);
 });
+
 
 app.listen(8080);
