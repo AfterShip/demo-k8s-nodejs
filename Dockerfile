@@ -1,4 +1,4 @@
-FROM us.gcr.io/aftership-admin/jenkins/nodejs-onbuild:nodejs-6.11.1
+FROM asia-east1-docker.pkg.dev/aftership-admin/ci-artifacts/nodejs-onbuild:nodejs-6.11.1
 
 EXPOSE 8080
 
